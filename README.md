@@ -281,15 +281,23 @@
     }
     ```
 
+### **Higher Order Functions in JS**
 
+### **Callback Functions:**
+- A **callback function** is a function that passed as an argument (parameter) to another function.
 
-### Execution Context:
+  #### **Callback Hell:** 
+  - Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. 
+  - Doing several asynchronous operations in a row would lead to the classic callback hell.
+  - Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
+
+## Execution Context:
 - **There are two kinds of Execution Context in JavaScript: Global Execution Context (GEC) and Function Execution Context (FEC)**
 
 1. **Global Execution Context (GEC)** :
 - Whenever the JavaScript engine receives a script file, it first creates a default Execution Context known as the Global Execution Context (GEC).
 - The GEC is the base/default Execution Context where all JavaScript code that is not inside of a function gets executed.
-> For every JavaScript file, there can only be one GEC.
+  > For every JavaScript file, there can only be one GEC.
 
 2. **Function Execution Context (FEC)** :
 - Whenever a function is called, the JavaScript engine creates a different type of Execution Context known as a Function Execution Context (FEC) within the GEC to evaluate and execute the code within that function.
@@ -345,3 +353,102 @@
 - Event Loop and Callback Queue
 - Closures 
 
+
+
+## AJAX / Ashronous JavaScript 
+  1. **XMLHttpRequest object :** The XMLHttpRequest object can be used to exchange data with a web server behind the scenes.
+    ```js
+      //* create a function to wrapup the XMLHttpRequest object code 
+      function makeHttpRequest(method, url){
+        // Create an XMLHttpRequest Object
+        const xhr = new XMLHttpRequest();
+        
+        //* Define a callback function : With the XMLHttpRequest object we can define a callback function to be executed when the request receives an answer.
+        xhr.onload = function(){
+          //* what to do when the response is ready.
+        }
+
+        //* To send a request to a server, we can use the open() and send() methods of the XMLHttpRequest object
+        xhr.open(method, url) // method('GET', 'POST',...)
+        xhr.send()
+      }
+
+      makeHttpRequest('GET', 'https://dog.ceo/api/breeds/image/random')
+    ```
+  
+
+  2. **Promise :** A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+    - Essentially, a promise is a returned object to which we attach callbacks, instead of passing callbacks into a function.
+    - A Promise is in one of these states:
+      - pending : initial state, neither fulfilled nor rejected.
+      - fulfilled : meaning that the operation was completed successfully.
+      - fulfilled : meaning that the operation failed.
+    
+    ```js
+      const myPromise = new Promise((resolve, reject) => {
+        if(user.id === database.userid) {
+          resolve('Promise resolved successfully.')
+        }
+        else {
+          reject('Promise rejected.')
+        }
+      })
+
+      myPromise.then((data) => {
+        console.log(data) //* 'Promise resolved successfully.'
+      }).catch((err) => {
+        console.log(err) //* 'Promise rejected.'
+      }).finally(() => {
+        console.log('it is executed at the end either promise resolve or reject.')
+      })
+    ```
+    - **instance methods:**
+      - Promise.then() :
+      - Promise.catch() :
+      - Promise.finally() :
+
+  3. **fetch() :**
+
+  4. **async() await :**
+
+  5. **try{} catch{} / try{} catch{} finaaly{} :**
+
+
+## **ES6 features :**
+#### 1. **optional chaining(?.) :**
+  ```js
+    const user = {
+      firstName: 'Mohan',
+      lastName: 'Verma',
+      address: {
+        currentAddress: {
+          city: 'Chennai',
+          pincode: 503254
+        },
+        permanentAddress: {
+          city: 'Pune',
+          pincode: 431103
+        }
+      },
+      getFullName(){
+        return this.firstName + ' ' + this.lastName
+      }
+    }
+
+    //* optional chaining
+    const userCity = user?.address?.currentAddress?.city
+    console.log(userCity) // 'Chennai'
+
+    const userFullName = user.getFullName?.()
+    console.log(userFullName) // 'Mohan Verma'
+    console.log(user.getUserCity?.()) // undefined
+    console.log(user.getUserCity()) // TypeError: user.getUserCity is not a function
+    console.log(user?.userName?.firstName) // undefined
+    console.log(user?.userName.firstName) // TypeError: Cannot read properties of undefined (reading 'firstName')
+    console.log(user.userName.firstName) // TypeError: Cannot read properties of undefined (reading 'firstName')
+  ```
+
+#### 2. **export and import in JS :**
+##### Types of export & import:
+  1) **named export - import** :
+  2) **default export - import** :
