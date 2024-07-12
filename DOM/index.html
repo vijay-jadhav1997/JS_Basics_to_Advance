@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <script src="./script.js" defer></script>
+  <title>Learn DOM in JS</title>
+  <style>
+    body{
+      color: #ffffff;
+      background-color: #3b3b3b;
+    }
+    .cards {
+      padding: 2rem 1rem;
+      background-color: teal;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      border-radius: 1rem;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .card:first-child {
+      position: absolute;
+      top: -10rem;
+      background-color: #b4d2a0;
+      color: purple;
+      font-size: 3rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .card:nth-child(2n) {
+      box-shadow: 0 0 25px 10px purple, inset 0 0 15px 10px lightcyan;
+    }
+    .card:nth-child(3n) {
+      box-shadow: 0 0 25px 10px yellowgreen, inset 0 0 15px 10px tomato;
+    }
+    .card:nth-child(4n) {
+      box-shadow: 0 0 25px 10px cornflowerblue, inset 0 0 15px 10px pink;
+    }
+    
+    .card {
+      height: 4.5rem;
+      width: 3.5rem;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: 700;
+      box-shadow: 0 0 25px 10px #c74804, inset 0 0 15px 10px rgb(30, 176, 4);
+      cursor: pointer;
+      /* animation: blinking 500ms infinite ease-in-out; */
+    }
+    @keyframes blinking {
+      from {
+        filter: hue-rotate(0deg);
+      }
+      to {
+        filter: hue-rotate(360deg);
+      }
+    }
+    .text {
+      padding: 1rem;
+      color: #fff;
+      font-size: 1.25rem;
+      font-family: cursive;
+      border: 3px solid tomato;
+    }
+    form {
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <H1>...Jay Shree Ram Krushna Hari...</H1>
+  <div id="example">This is <span>some</span> text!</div>
+  <!-- <img src="'https://lh3.googleusercontent.com/a/ACg8ocJr8xoEyvYEJhrLc_5UP5Zd7a2Icmtw5LPyvEte-O7mEyc90_w=s324-c-no'" alt="Google profile DP image"> -->
+  <p style="font-size:2rem; margin:10rem 0 0; text-align: center;">Please, Don't click on the card</p>
+  <div class="cards">
+    <div class="card">+</div>
+  </div>
+
+  <h2>Form evenets:</h2>
+  <form action="/DOM/">
+    <input type="text" id="username" name="username">
+    <input type="email" id="email" name="email">
+    <button type="submit">click</button>
+  </form>
+  <p tabindex="0" draggable="true" class="text">Write something in the inputbox</p>
+
+
+  <div id="green" style="background-color: green; padding: 3rem; width: max-content;">
+    <div id="pink" style="background-color: #d007ab; padding: 3rem;">
+      <div id="blue" style="background-color: #040080; padding: 2rem; height: 3rem; width: 10rem;"></div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
