@@ -206,3 +206,60 @@ const{5: fruit5} = fruits
 const{name: username, age: userAge} = user
 // const{address: {pincode}} = user
 const{address: {pincode : code}} = user
+
+
+//? .some(callbackFn) and .every(callbackFn) methods of array in JS
+const evenNums = [2,4,6,8,10,12,14,16]
+const oddNums = [1,3,5,7,9,11,13,15]
+const mixedNums1 = [2,4,6,8,10,11,12,14,16]
+const mixedNums2 = [1,3,5,7,9,10,11,13,15]
+
+// debugger
+
+const isAnyEvenNumber = oddNums.some((num) => {
+  // console.log(num);
+  return num%2 === 0
+})
+
+
+const isAllEvenNumbers = evenNums.every((num) => {
+  // console.log(num);
+  return num%2 === 0  
+})
+
+console.log(isAnyEvenNumber);
+console.log(isAllEvenNumbers);
+
+
+const isAnyEvenNumber2 = mixedNums2.some((num) => {
+  // console.log(num);
+  return num%2 === 0
+})
+
+
+const isAllEvenNumbers2 = mixedNums1.every((num) => {
+  // console.log(num);
+  return num%2 === 0  
+})
+console.log(isAnyEvenNumber2);
+console.log(isAllEvenNumbers2);
+
+const res5 = mixedNums1.some((num, i) => {
+  if(num%2 !== 0) {
+    console.log(`Index of odd number ${num} is ${i}`)
+    console.log(num);
+  }
+  return num%2 !== 0
+})
+
+
+function outer(){
+  function inner(){
+     console.log(x)
+  }
+  const x = 5
+  return inner
+}
+const inner = outer()
+console.dir(inner)
+inner()
