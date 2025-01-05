@@ -178,7 +178,7 @@ function add(){
 // const res = add(1,2,3,4,5,6)
 // console.log(res);
 
-const nums1 = [1,2,3,4,5]
+export const nums1 = [1,2,3,4,5]
 const nums2 = [6,7,8,9,10]
 
 const nums = [...nums1, ...nums2, 11,12,13,14,15]
@@ -227,8 +227,8 @@ const isAllEvenNumbers = evenNums.every((num) => {
   return num%2 === 0  
 })
 
-console.log(isAnyEvenNumber);
-console.log(isAllEvenNumbers);
+// console.log(isAnyEvenNumber);
+// console.log(isAllEvenNumbers);
 
 
 const isAnyEvenNumber2 = mixedNums2.some((num) => {
@@ -241,18 +241,22 @@ const isAllEvenNumbers2 = mixedNums1.every((num) => {
   // console.log(num);
   return num%2 === 0  
 })
-console.log(isAnyEvenNumber2);
-console.log(isAllEvenNumbers2);
-
-const res5 = mixedNums1.some((num, i) => {
-  if(num%2 !== 0) {
-    console.log(`Index of odd number ${num} is ${i}`)
-    console.log(num);
-  }
-  return num%2 !== 0
-})
+// console.log(isAnyEvenNumber2);
+// console.log(isAllEvenNumbers2);
 
 
+// const res5 = mixedNums1.some((num, i) => {
+//   if(num%2 !== 0) {
+    // console.log(`Index of odd number ${num} is ${i}`)
+    // console.log(num);
+
+//   }
+//   return num%2 !== 0
+// })
+
+
+
+/*
 function outer(){
   function inner(){
      console.log(x)
@@ -263,3 +267,25 @@ function outer(){
 const inner = outer()
 console.dir(inner)
 inner()
+*/
+
+function checkVar() {
+  if (true) {
+    console.log(x);
+    console.log(y);
+    var x = 25
+    let y = 25
+    const count = 11
+  }
+  // debugger
+  console.log(x);
+}
+
+checkVar()
+
+for(let i = 0; i < 5; i++){
+  var dict = { name: 'Shambho', age: 20, isGraduate: true}
+  print(i)
+  let minValue = 25
+}
+console.log(dict, minValue);
