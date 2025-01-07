@@ -268,11 +268,11 @@ const inner = outer()
 console.dir(inner)
 inner()
 */
-
+/*
 function checkVar() {
   if (true) {
-    console.log(x);
-    console.log(y);
+    // console.log(x);
+    // console.log(y);
     var x = 25
     let y = 25
     const count = 11
@@ -284,8 +284,32 @@ function checkVar() {
 checkVar()
 
 for(let i = 0; i < 5; i++){
-  var dict = { name: 'Shambho', age: 20, isGraduate: true}
+  // var dict = { name: 'Shambho', age: 20, isGraduate: true}
   print(i)
   let minValue = 25
 }
-console.log(dict, minValue);
+// console.log(dict, minValue);
+const mydict = { name: 'Shambho', age: 20, isGraduate: true}
+console.log(mydict);
+*/
+
+// const myObj = { username: 'Mohan', isActive: true}
+// console.log(myObj);
+
+// let firstName = "Raghav"
+// let lastName = "Sharma"
+// console.log(Object.keys(myObj));
+// console.log(Object.values(myObj));
+// console.log(Object.entries(myObj));
+
+// const ticTacToe = [['x', null, null], [null, null, 'o'], ['o', null, 'x']]
+
+
+
+
+const newFruits = ['mango', 'apple', 'guva', 'papaya']
+
+const neoFruits = newFruits
+
+neoFruits.push('dates')
+

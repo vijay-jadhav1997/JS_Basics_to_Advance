@@ -23,5 +23,24 @@ print(f'outside the loop: nums => {nums}')
 my_str = ' Jay Maha'
 print(my_str.strip('ha'))
 
+
+new_fruits = ['mango', 'apple', 'guva', 'papaya']
+
+for value in new_fruits:
+  print(value)
+
+myObj = { 'username': 'Mohan', 'is_active': True}
+print("Keys => ", list(myObj.keys()))
+print("items => ", list(myObj.items()))
+print("Values => ", list(myObj.values()))
+for key in myObj.keys():
+  print(key, " => ", )
+
+
+do_something = lambda x, y: x/y if x > y else y/x
+print("do_something => ", round(do_something(2,10)))
+
+
+
 if __name__ == "__main__":
   check_var_scope()
