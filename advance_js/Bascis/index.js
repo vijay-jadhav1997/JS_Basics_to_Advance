@@ -1,5 +1,5 @@
 
-const newFruits = ['mango', 'apple', 'guva', 'papaya', 'orange', 'pinapple', 'water melon', 'musk melon']
+const newFruits = ['mango', 'apple', 'guva', 'papaya', 'orange', 'pinapple', 'water melon', 'musk melon',]
 
 const neoFruits = [...newFruits]
 
@@ -159,4 +159,26 @@ function rollADie(numberOfSides) {
   return Math.floor((Math.random() * numberOfSides) + 1)
 }
 
-console.log(rollADie(20))
+// console.log(rollADie(20))
+/*
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("Jay Jay Ram Krushna Hari, after 10sec");
+    resolve("Har Har Mahadev, from after resolve")
+  }, 10000)
+  // reject("Your promise is rejected.")
+})
+
+promise.then((data) => {
+  console.log(data);
+}).catch((error) => {
+  console.log(error);
+}).finally(() => {
+  console.log("Finally block is excuted");
+})
+
+// console.dir(typeof promise)
+
+
+*/
+
