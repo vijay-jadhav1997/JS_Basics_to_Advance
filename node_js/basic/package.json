@@ -1,0 +1,20 @@
+{
+  "name": "node_basics",
+  "version": "1.0.0",
+  "description": "Learn Node.js basics here.",
+  "keywords": [
+    "node_js"
+  ],
+  "license": "ISC",
+  "author": "Vijay Jadhav",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "lodash": "^4.17.21",
+    "nodemon": "^3.1.9"
+  }
+}
